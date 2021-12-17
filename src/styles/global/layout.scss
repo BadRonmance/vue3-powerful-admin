@@ -1,0 +1,107 @@
+.transform_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.img_cover {
+  object-fit: cover;
+}
+.t_c {
+  text-align: center;
+}
+
+.t_r {
+  text-align: right;
+}
+
+.t_l {
+  text-align: left;
+}
+.allowed {
+  cursor: not-allowed;
+}
+
+.cursor {
+  cursor: pointer;
+}
+.underline {
+  text-decoration: underline;
+}
+.hydlnr {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.gobyndsingle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+.dis_in {
+  display: inline;
+}
+
+.dis_block {
+  display: block;
+}
+
+.dis_in_block {
+  display: inline-block;
+}
+
+.dis_bottom {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.dis_in_center {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dis_in_top {
+  display: inline-block;
+  vertical-align: top;
+}
+.wid_hei {
+  width: 100%;
+  height: 100%;
+}
+
+.wid {
+  width: 100%;
+}
+
+.hei {
+  min-height: 100%;
+}
+
+.over_hidden {
+  overflow: hidden;
+}
+
+.over_x_hidden {
+  overflow-x: hidden;
+}
+
+.over_y_hidden {
+  overflow-y: hidden;
+}
+.rel {
+  position: relative;
+}
+.ab {
+  position: absolute;
+}

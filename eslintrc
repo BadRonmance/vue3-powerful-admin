@@ -1,0 +1,2 @@
+eslint --no-eslintrc css
+eslint --no-eslintrc scss

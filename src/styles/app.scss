@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--el-color-primary);
+}
+code {
+  border-radius: 2px;
+  padding: 2px 4px;
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+}
+#nprogress .bar {
+  background: var(--el-color-primary) !important; //自定义颜色
+}
+#nprogress .spinner-icon {
+  border-top-color: var(--el-color-primary) !important;
+  border-left-color: var(--el-color-primary) !important;
+}
+.color_primary {
+  color: var(--el-color-primary);
+}
+.color_success {
+  color: var(--el-color-success);
+}
+.color_warning {
+  color: var(--el-color-warning);
+}
+.color_danger {
+  color: var(--el-color-danger);
+}
+.color_error {
+  color: var(--el-color-error);
+}
+.project-bg {
+  background: #f5f7f9;
+}
