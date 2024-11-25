@@ -17,38 +17,38 @@ interface LevelRoute {
     fullPath?: string;
     redirect: RouteRecordRedirectOption
 }
-function setRoute(routes: AppRouteRecordRaw[]) {
-    let levelRoute: LevelRoute[] = [];
-    const transRoute = (index: number, data: AppRouteRecordRaw[]) => {
-        data.map((item: AppRouteRecordRaw) => {
-            levelRoute[index].children.push({
-                'path': item.path,
-                'name': item.name,
-                'component': item.component,
-                'meta': item.meta,
-                'sort': item.sort
-            });
-            item.children && item.children.length && transRoute(index, item.children);
-        });
-    };
+// function setRoute(routes: AppRouteRecordRaw[]) {
+//     let levelRoute: LevelRoute[] = [];
+//     const transRoute = (index: number, data: AppRouteRecordRaw[]) => {
+//         data.map((item: AppRouteRecordRaw) => {
+//             levelRoute[index].children.push({
+//                 'path': item.path,
+//                 'name': item.name,
+//                 'component': item.component,
+//                 'meta': item.meta,
+//                 'sort': item.sort
+//             });
+//             item.children && item.children.length && transRoute(index, item.children);
+//         });
+//     };
 
-    for (let i = 0; i < routes.length; i++) {
-        let obj = {
-            'path': routes[i].path,
-            'name': routes[i].name,
-            'component': routes[i].component,
-            'meta': routes[i].meta,
-            'sort': routes[i].sort,
-            'redirect': routes[i].redirect,
-            'children': []
-        };
+//     for (let i = 0; i < routes.length; i++) {
+//         let obj = {
+//             'path': routes[i].path,
+//             'name': routes[i].name,
+//             'component': routes[i].component,
+//             'meta': routes[i].meta,
+//             'sort': routes[i].sort,
+//             'redirect': routes[i].redirect,
+//             'children': []
+//         };
 
-        levelRoute.push(obj);
-        transRoute(i, routes[i].children || []);
-    }
-    return levelRoute;
-}
-const routes = [...basicRoute, ...setRoute(permissionRoute)];
+//         levelRoute.push(obj);
+//         transRoute(i, routes[i].children || []);
+//     }
+//     return levelRoute;
+// }
+const routes = [...basicRoute, ...permissionRoute];
 
 export const router = createRouter({
     'history': createWebHistory(),

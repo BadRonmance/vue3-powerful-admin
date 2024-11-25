@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-10-13 10:46:57
- * @LastEditTime: 2021-12-17 09:07:13
+ * @LastEditTime: 2022-02-24 13:24:21
  * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\App.vue
+ * @FilePath: \vue3-powerful-admin\src\App.vue
 -->
 <template>
   <router-view />
@@ -25,6 +25,7 @@ export default {
       colorConfig = computed(() => {
         return store.state.themeConfig.colorConfig;
       });
+
     watch(
       () => route.meta.cmpName,
       (cmpName) => {

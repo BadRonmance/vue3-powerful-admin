@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-11-15 10:44:07
- * @LastEditTime: 2021-12-09 18:30:03
+ * @LastEditTime: 2022-02-24 09:59:15
  * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\components\line-chart\src\index.vue
+ * @FilePath: \vue3-powerful-admin\src\components\line-chart\src\index.vue
 -->
 <template>
   <div :id="timeStemp"></div>
@@ -101,12 +101,7 @@ export default {
     const funName = async (clear = false) => {
       await nextTick();
       chart.value = new chartClass(props);
-      console.log("初次渲染", chart.value);
-
       chart.value.render();
-      // setTimeout(() => {
-      //   chart.value.repaint();
-      // }, 2000);
     };
 
     funName();

@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-11-12 17:00:50
- * @LastEditTime: 2021-12-08 11:15:29
+ * @LastEditTime: 2022-02-23 15:45:47
  * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\layout\content\level.vue
+ * @FilePath: \vue3-powerful-admin\src\layout\content\level.vue
 -->
 
 <template>
@@ -21,7 +21,7 @@
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 export default {
-    'name': 'level',
+    'name': 'LayoutLevel',
     setup() {
         const store = useStore(),
             CachedViews = computed(() => store.state.cache.cacheList);

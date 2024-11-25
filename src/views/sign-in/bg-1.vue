@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-11-12 10:13:33
- * @LastEditTime: 2021-12-08 16:02:42
+ * @LastEditTime: 2022-02-24 09:47:33
  * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\views\sign-in\bg-1.vue
+ * @FilePath: \vue3-powerful-admin\src\views\sign-in\bg-1.vue
 -->
 <template>
   <div class="header rel">
@@ -65,9 +65,14 @@
   text-align: center;
   background: linear-gradient(
     60deg,
+    var(--el-color-primary) 0%,
+    var(--el-color-primary-light-4) 100%
+  );
+  /* background: linear-gradient(
+    60deg,
     rgba(84, 58, 183, 1) 0%,
     rgba(0, 172, 193, 1) 100%
-  );
+  ); */
   color: white;
 }
 .logo {

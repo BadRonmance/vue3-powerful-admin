@@ -18,16 +18,3 @@ const routeModuleList = () => {
 };
 
 export const permissionRoute = routeModuleList();
-
-// import componentsRouter from "./modules/components"
-// import formRouter from "./modules/form"
-// import homeRouter from "./modules/home"
-// import jurisdictionRouter from "./modules/jurisdiction"
-// import systemRouter from "./modules/system"
-// export const permissionRoute = [
-//     ...homeRouter,
-//     ...homeRouter,
-//     ...homeRouter,
-//     ...homeRouter,
-//     ...homeRouter,
-// ]

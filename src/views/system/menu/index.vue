@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-12-06 11:03:19
- * @LastEditTime: 2021-12-14 16:04:55
+ * @LastEditTime: 2022-02-23 15:44:09
  * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\views\system\menu\index.vue
+ * @FilePath: \vue3-powerful-admin\src\views\system\menu\index.vue
 -->
 <template>
   <section class="pa_20 background_f">
@@ -66,12 +66,14 @@ import { Search } from '@element-plus/icons';
 import { reactive, ref } from 'vue';
 import { permissionRoute } from '@/router/routes/index';
 import { getProjectSize } from '@/hooks/theme';
-import {recordLog} from "@/libs/utils/log"
-function setRoute(routes: any[]) {
-    routes.map((item: { label: any; meta: { title: any }; children: any[] }) => {
-        item.label = item.meta.title;
-        item.children && item.children.length && setRoute(item.children);
-    });
+import { recordLog } from '@/libs/utils/log';
+function setRoute(routes: []) {
+    routes.map(
+        (item: { label: string; meta: { title: string }; children: [] }) => {
+            item.label = item.meta.title;
+            item.children && item.children.length && setRoute(item.children);
+        }
+    );
 }
 interface Menu {
   menuType?: string;
@@ -95,27 +97,27 @@ export default {
         });
         const selectMenu = reactive({}),
             filterVal = ref(''),
-            nodeClick = (checkedkey: any) => {
+            nodeClick = (checkedkey) => {
                 formValue.menuTitle = checkedkey.label;
                 formValue.menuPath = checkedkey.path;
                 formValue.menuAuth = String(checkedkey.meta.auth);
             },
-            checkChange = (checkedNodes: any, checkedKeys: any) => {
+            checkChange = (checkedNodes, checkedKeys) => {
                 console.log(checkedNodes);
             },
-            treeRef: any = ref(null),
+            treeRef = ref(null),
             filterInput = () => {
                 treeRef.value.filter(filterVal.value);
             },
-            filterNode = (value: any, data: { label: string | any[] }) => {
+            filterNode = (value, data: { label: string | [] }) => {
                 if (!value) {
                     return true;
                 }
                 return data.label.indexOf(value) !== -1;
             },
-            record=()=>{
-              recordLog("主动日志记录")
-            }
+            record = () => {
+                recordLog('主动日志记录');
+            };
 
         return {
             selectMenu,

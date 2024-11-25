@@ -12,13 +12,13 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-11-29 09:59:31
- * @LastEditTime: 2021-12-15 10:24:17
+ * @LastEditTime: 2022-02-24 14:53:20
  * @LastEditors: 天生不是宠儿
  * @FilePath: \vite-project\src\components\table\src\index.vue
 -->
 <template>
   <el-table
-    v-loading="tableData.length == 0"
+    v-loading="loading"
     highlight-current-row
     :header-cell-style="headerCellStyle"
     :cell-style="setColumnStyle"
@@ -111,6 +111,10 @@ import type { PropItem, FixedAttr, Operation } from "@/types/table";
 export default defineComponent({
   name: "userSystem",
   props: {
+    loading: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
     propData: {
       type: Array as PropType<PropItem[]>,
       default: () => [],
@@ -147,7 +151,7 @@ export default defineComponent({
   setup(props, context) {
     const projectSize = getProjectSize(),
       setColumnStyle = () => {
-        return objToString(props.cellStyle);
+        return props.cellStyle;
       },
       setRowStyle = (e: { row: { customRowStyle: any } }) => {
         if (e.row.customRowStyle) {
@@ -161,7 +165,7 @@ export default defineComponent({
           "text-align": "center",
         };
 
-        return objToString(defaultStyle);
+        return defaultStyle;
       },
       // 单个数据点击事件
       handlerCellClick = (data: any, prop: { type: string }) => {
@@ -203,10 +207,10 @@ export default defineComponent({
 });
 </script>
 <style>
-.el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
+/* .el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
   background: var(--el-color-primary-light-8) !important;
 }
 .el-table__body tr.current-row > td {
   background-color: var(--el-color-primary-light-8) !important;
-}
+} */
 </style>

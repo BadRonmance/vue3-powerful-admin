@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import { CookieKey } from '@/enums/cookie';
 
 export function getToken() {
-    return 123 || Cookies.get(CookieKey.TOKEN_KEY);
+    return  Cookies.get(CookieKey.TOKEN_KEY);
 }
 
 export function setToken(token: any) {

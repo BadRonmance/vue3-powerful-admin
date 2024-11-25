@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-11-11 19:44:36
- * @LastEditTime: 2021-12-03 10:40:28
- * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\views\home\home.vue
+ * @LastEditTime: 2022-12-08
+ * @LastEditors: 张泽锋
+ * @FilePath: \vue3-powerful-admin\src\views\home\home.vue
 -->
 <template>
   <div class="grid fon_14">
@@ -92,38 +92,38 @@
   </div>
 </template>
 <script lang="ts">
-import { computed, ref } from 'vue';
-import lineChart from '../chart/line-chart.vue';
-import polygonalLineChart from '../chart/polygonal-line-chart.vue';
-import axios from 'axios';
-import { useStore } from 'vuex';
+import { computed, ref } from "vue";
+import lineChart from "../chart/line-chart.vue";
+import polygonalLineChart from "../chart/polygonal-line-chart.vue";
+import axios from "axios";
+import { useStore } from "vuex";
 
 export default {
-    'name': 'home',
-    'components': { lineChart, polygonalLineChart },
-    setup() {
-        const store = useStore();
-        let timeStemp = ref(`lineChart-${new Date().getTime()}`),
-            userAccessList = ref<[]>([]),
-            userDonutChart = ref<[]>([]);
-        const primaryColor = computed(() => {
-            timeStemp.value = `lineChart-${new Date().getTime()}`;
-            return store.state.themeConfig.colorConfig.primaryColor;
-        });
+  name: "home",
+  components: { lineChart, polygonalLineChart },
+  setup() {
+    const store = useStore();
+    let timeStemp = ref(`lineChart-${new Date().getTime()}`),
+      userAccessList = ref<[]>([]),
+      userDonutChart = ref<[]>([]);
+    const primaryColor = computed(() => {
+      timeStemp.value = `lineChart-${new Date().getTime()}`;
+      return store.state.themeConfig.colorConfig.primaryColor;
+    });
 
-        axios.get('/api/getUserAccessList').then((res) => {
-            userAccessList.value = res.data.data;
-        });
-        axios.get('/api/donutChart').then((res) => {
-            userDonutChart.value = res.data.data;
-        });
-        return {
-            userDonutChart,
-            userAccessList,
-            primaryColor,
-            timeStemp
-        };
-    }
+    axios.get("/api/getUserAccessList").then((res) => {
+      userAccessList.value = res.data.data;
+    });
+    axios.get("/api/donutChart").then((res) => {
+      userDonutChart.value = res.data.data;
+    });
+    return {
+      userDonutChart,
+      userAccessList,
+      primaryColor,
+      timeStemp,
+    };
+  },
 };
 </script>
 <style>

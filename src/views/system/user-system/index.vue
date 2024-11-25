@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-11-17 11:32:46
- * @LastEditTime: 2021-12-10 17:56:28
+ * @LastEditTime: 2022-02-23 15:41:28
  * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\views\system\user-system\index.vue
+ * @FilePath: \vue3-powerful-admin\src\views\system\user-system\index.vue
 -->
 
 <template>
@@ -147,6 +147,7 @@ export default defineComponent({
         });
         const getData = async () => {
             const userList = await getUserList();
+
             userList.data.data.map((item: UserItem) => {
                 item.strSex = dictionary.getVal('sex', item.sex);
                 item.strStatus = dictionary.getVal('userStatus', item.status);
@@ -165,14 +166,15 @@ export default defineComponent({
          * @return {*}
          * @author: 天生不是宠儿
          * @Date: 2021-12-10 17:56:13
-         */ 
+         */
         const clearPageCache = () => {
             store.commit('tab/deleteTab', route.path);
             store.commit('cache/deleteCache', 'userSystem');
             router.go(-1);
         };
         const handlerCellClick = (e: UserItem) => {
-            console.log('信息打印', e);
+            console.log(e);
+
             clearPageCache();
         };
 

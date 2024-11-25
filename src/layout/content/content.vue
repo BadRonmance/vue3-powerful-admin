@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-11-10 09:52:58
- * @LastEditTime: 2021-12-09 16:58:02
+ * @LastEditTime: 2022-02-24 13:36:13
  * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\layout\content\content.vue
+ * @FilePath: \vue3-powerful-admin\src\layout\content\content.vue
 -->
 <template>
   <div class="layout-side rel">
@@ -32,31 +32,32 @@
   </div>
 </template>
 <script lang="ts">
-import vTabs from '../tabs/tab.vue';
-import vHeader from '../header/header.vue';
-import vLevel from './level.vue';
-import { getThemeConfig } from '@/libs/utils/function';
-import { useStore } from 'vuex';
-import { computed } from 'vue';
+import vTabs from "../tabs/tab.vue";
+import vHeader from "../header/header.vue";
+import vLevel from "./level.vue";
+import { getThemeConfig } from "@/libs/utils/function";
+import { useStore } from "vuex";
+import { computed } from "vue";
 export default {
-    'components': {
-        vHeader,
-        vTabs,
-        vLevel
-    },
-    setup() {
-        const store = useStore();
-        let FixedHeader = computed(() =>
-            getThemeConfig(store.state.themeConfig.navConfig, 'FixedHeader')
-        );
+  name: "LayoutContent",
+  components: {
+    vHeader,
+    vTabs,
+    vLevel,
+  },
+  setup() {
+    const store = useStore();
+    let FixedHeader = computed(() =>
+      getThemeConfig(store.state.themeConfig.navConfig, "FixedHeader")
+    );
 
-        const isCollapse = computed(() => store.state.slideMenu.collapse);
+    const isCollapse = computed(() => store.state.slideMenu.collapse);
 
-        return {
-            isCollapse,
-            FixedHeader
-        };
-    }
+    return {
+      isCollapse,
+      FixedHeader,
+    };
+  },
 };
 </script>
 <style>
@@ -85,8 +86,10 @@ export default {
 }
 .layout-content-default {
   padding-top: 10px;
+  min-height: calc(100vh - 60px - 60px);
 }
 .layout-content-fixed-width-header {
   padding-top: calc(60px + 60px);
+  min-height: 100vh;
 }
 </style>

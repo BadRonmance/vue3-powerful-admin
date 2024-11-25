@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: 天生不是宠儿
  * @Date: 2021-11-12 09:28:04
- * @LastEditTime: 2021-11-12 15:03:52
+ * @LastEditTime: 2022-02-24 09:44:59
  * @LastEditors: 天生不是宠儿
- * @FilePath: \vite-project\src\views\sign-in\bg-2.vue
+ * @FilePath: \vue3-powerful-admin\src\views\sign-in\bg-2.vue
 -->
 <template>
   <div class="wrapper">
@@ -27,6 +27,7 @@
 // @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 
 $--color: #53e3a6;
+$--color-dark: rgba(var(--el-color-primary), 0.5);
 
 * {
   box-sizing: border-box;
@@ -71,7 +72,11 @@ body {
 
 .wrapper {
   background: #6c93d8;
-  background: linear-gradient(to bottom right, #1cb2de 0%, #031356 100%);
+  background: linear-gradient(
+    to bottom right,
+    var(--el-color-primary-light-7) 0%,
+    var(--el-color-primary) 100%
+  );
 
   position: absolute;
   top: 0;

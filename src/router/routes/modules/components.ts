@@ -34,7 +34,7 @@ const componentsRouter: AppRouteRecordRaw = {
             'meta': {
                 'title': '地图'
             },
-            'component': () => import('@/views/chart/index.vue')
+            'component': () => import('@/views/components/map/index.vue')
         },
         {
             'path': '/video',
@@ -42,7 +42,15 @@ const componentsRouter: AppRouteRecordRaw = {
             'meta': {
                 'title': '视频'
             },
-            'component': () => import('@/views/chart/index.vue')
+            'component': () => import('@/views/components/video/index.vue')
+        },
+        {
+            'path': '/editor',
+            'name': 'editor',
+            'meta': {
+                'title': '富文本编辑器'
+            },
+            'component': () => import('@/views/components/editor/index.vue')
         }
     ]
 };
